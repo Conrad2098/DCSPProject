@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,6 +12,9 @@
 </head>
 <body>
 <!-- Check Logged In -->
+<?php if(!(isset($_SESSION["username"]))){
+	echo header("locaiton: login.html");
+} ?>
 
 <!-- Shell -->
 <div class="shell">
@@ -38,10 +42,8 @@
     <!-- Content -->
     <div id="content">
 		<br><br><br>
-		<h1>Login</h1><br><br>
-		Username: <input class="field" type="text" name="username"><br><br>
-		Password: <input class="field" type="password" name="password"><br><br>
-		<button class="search-submit" type="button">Submit</button>
+		<h1>No items in your cart</h1><br><br>
+		
     </div>
     <!-- End Content -->
     <div class="cl">&nbsp;</div>
