@@ -29,6 +29,6 @@
   
   $adminpass = hash('sha512', '$salt1$adminpassword$salt2');
   
-  $query = "INSERT INTO users VALUES(00000, 'admin', $adminpass, true)"
-  
+  $query = "INSERT INTO users VALUES(00000, 'admin', $adminpass, true)";
+  $conn->query($query);
 ?>
