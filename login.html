@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -42,15 +41,7 @@
 		<form method="post" action="login.html">
 			Username: <input class="field" type="text" name="username" value=""><br><br>
 			Password: <input class="field" type="password" name="password" value=""><br><br>
-			<button class="search-submit" type="button">Submit</button>
-			
-			<?php if($_POST["username"] == "username" AND $_POST["password"] == "password"){
-				$_SESSION["username"] = "username";
-				echo <script>document.getElementbyID('errorMessage').innerHTML = "";</script>
-				
-			}else{
-				echo <script type="text/javascript"> document.getElementbyID('errorMessage').innerHTML = "Invalid Username/Password Combination"; </script>
-			}?>
+      <button class="search-submit" type="button">Submit</button>
 		</form>
     </div>
     <!-- End Content -->
