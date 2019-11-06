@@ -31,4 +31,5 @@
   
   $query = "INSERT INTO users VALUES(00000, 'admin', $adminpass, true)";
   $conn->query($query);
+  // test
 ?>
