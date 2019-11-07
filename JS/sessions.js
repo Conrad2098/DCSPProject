@@ -1,17 +1,16 @@
 function login(){
 	try{
-	if(document.getElementById("username") !== "username" && document.getElementById("password") !== "password"){
-		var username = document.getElementById("username");
-		var password = document.getElementById("password");
+	if(document.getElementById("username").value == "username" && document.getElementById("password").value == "password"){
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
 	}else{
 		var login = false;
 	}
-	
 	if(login == false){
 		document.getElementById("errorMessage").innerHTML = "Invalid Login Information";
 	}else{
 		document.getElementById("errorMessage").innerHTML = "";
-		document.cookie = "username=username";
+		sessionStorage.setItem("username", username);
 		window.location.replace("./home.html");
 	}
 	}catch(err){
@@ -21,7 +20,7 @@ function login(){
 
 function checkIfLoggedIn(){
 	try{
-		if(document.cookie != null){
+		if(sessionStorage.getItem("username") == "username"){
 			window.location.replace("./cart.html")
 		}else{
 			window.location.replace("./login.html")
@@ -33,7 +32,7 @@ function checkIfLoggedIn(){
 
 function loginout(){
 	try{
-		if(document.cookie != null){
+		if(sessionStorage.getItem("username") == "username"){
 			document.getElementById("account").innerHTML = "Logout";
 		}else{
 			document.getElementById("account").innerHTML = "Login";
@@ -45,8 +44,8 @@ function loginout(){
 
 function logout(){
 	try{
-		if(document.cookie != null){
-			document.cookie = null;
+		if(sessionStorage.getItem("username") == "username"){
+			sessionStorage.clear();
 			window.location.replace("./logout.html");
 		}else{
 			window.location.replace("./login.html");
