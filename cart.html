@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,9 +11,7 @@
 </head>
 <body>
 <!-- Check Logged In -->
-<?php if(!(isset($_SESSION["username"]))){
-	echo header("locaiton: login.html");
-} ?>
+
 
 <!-- Shell -->
 <div class="shell">
@@ -29,7 +26,7 @@
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-        <li><a href="./template.html">Home</a></li>
+        <li><a href="./home.html">Home</a></li>
         <li><a href="#" class="active">Login</a></li>
       </ul>
     </div>
