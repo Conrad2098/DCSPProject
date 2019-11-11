@@ -5,9 +5,13 @@ function createNew(){
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            alert(this.responseText);
-            alert("Account Created. Click OK to return to the login page.");
-            window.location.replace("login.html");
+            if(this.responseText == ""){
+                alert(this.responseText);
+                alert("Already Exists. Please try again.")
+            }else{
+                alert("Account Created. Click OK to return to the login page.");
+                window.location.replace("login.html");
+            }
         }
     }
     req.open("GET", "create.php?u=" + name + "&p=" + pass, true);

@@ -16,24 +16,15 @@
   PRIMARY KEY (userID)) ENGINE=INNODB;";
 
   $result = $conn->query($query);
-  if (!$result)
+  if (!$result){
       die($conn->error);
+  }
+  
 
-  $salt1 = "i@e^";
-  $salt2 = "e&j3";
-  
-  $password = "password";
-  
-  $pass = hash('sha512', '$salt1$password$salt2');
-  
-  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00001, 'username', $pass, false)";
+  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00001, 'username', 'password', false)";
   $conn->query($query);
   
-  $adminpassword = "admin";
-  
-  $adminpass = hash('sha512', '$salt1$adminpassword$salt2');
-  
-  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00000, 'admin', $adminpass, true)";
+  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00000, 'admin', 'admin', true)";
   $conn->query($query);
 
   echo "Table Made.";
