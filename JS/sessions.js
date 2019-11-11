@@ -55,6 +55,22 @@ function logout(){
 	}
 }
 
+function cat(cat){
+	window.location.replace("category.html?cat=" + cat);
+}
+
+function create(){
+	window.location.replace("createUser.html");
+}
+
+function search(){
+	try{
+		window.location.replace("results.html?q=" + document.getElementById("searchbar").value);
+	}catch(err){
+		alert(err);
+	}
+}
+
 window.onload = function(){
 	this.loginout();
 }

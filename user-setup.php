@@ -1,13 +1,17 @@
 <?php
 
-  $conn = new mysqli('localhost', 'root', '', 'Project');
-  if ($conn->connect_error)
+  $conn = new mysqli('localhost', 'root', '', 'netid');
+  if ($conn->connect_error){
       die($conn->connect_error);
+  }
+
+  $query = "DROP TABLE IF EXISTS users;";
+  $conn->query($query);
 
   $query = "CREATE TABLE users (
   userID INT,
   username VARCHAR(32) NOT NULL,
-  password VARCHAR(32) NOT NULL,
+  pass VARCHAR(32) NOT NULL,
   isAdmin BOOL,
   PRIMARY KEY (userID)) ENGINE=INNODB;";
 
@@ -22,13 +26,15 @@
   
   $pass = hash('sha512', '$salt1$password$salt2');
   
-  $query = "INSERT INTO users VALUES(00001, 'username', $pass, false)";
+  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00001, 'username', $pass, false)";
   $conn->query($query);
   
   $adminpassword = "admin";
   
   $adminpass = hash('sha512', '$salt1$adminpassword$salt2');
   
-  $query = "INSERT INTO users VALUES(00000, 'admin', $adminpass, true)";
+  $query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00000, 'admin', $adminpass, true)";
   $conn->query($query);
+
+  echo "Table Made.";
 ?>

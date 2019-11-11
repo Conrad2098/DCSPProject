@@ -54,7 +54,7 @@ a.cart-link:hover { text-decoration: underline;}
 
 .top { padding:4px; height:40; width:864px; font-size:16px}
 .topSearch { padding:6px; height:50px; width:960px}
-.top-submit { background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
+.top-submit { width:40px; height:29px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
 
 .box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
 .box h2{ background:#7f7f7f; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
@@ -73,7 +73,7 @@ a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 .search select.field { width:212px; }
 .search select.small-field { width:50px; }
 
-.search-submit { width:70px; background:#8b0000; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
+.search-submit {display:inline; background:#8b0000; border:0; padding-right:4px; padding-left:4px; color:#fff; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
 
 .categories { min-height:383px; }
 .categories ul { list-style-type: none; font-size:13px;}

@@ -9,6 +9,7 @@
 <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
 <script src="js/jquery-func.js" type="text/javascript"></script>
 <script src="js/sessions.js" type="text/javascript"></script>
+<script src="js/search.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- Shell -->
@@ -24,7 +25,7 @@
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-        <li><a href="./home.html" class="active">Home</a></li>
+        <li><a href="./home.html">Home</a></li>
         <li><a id="account" onclick="logout()">Login</a></li>
       </ul>
     </div>
@@ -42,53 +43,10 @@
 	<!-- End Top Search Bar -->
     <!-- Content -->
     <div id="content">
-      <!-- Content Slider -->
-      <div id="slider" class="box">
-        <div id="slider-holder">
-          <ul>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-          </ul>
-        </div>
-        <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
-      </div>
-      <!-- End Content Slider -->
       <!-- Products -->
       <div class="products">
         <div class="cl">&nbsp;</div>
-        <ul>
-          <li> <a href="#"><img src="css/images/asus_2080_gc.jpg" width="235" height="275" /></a>
-            <div class="product-info">
-              <h3>ASUS 2080 Graphics Card</h3>
-              <div class="product-desc">
-                <h4>Graphics Card</h4>
-                <p>ASUS 2080<br />
-                  Graphics Card</p>
-                <strong class="price">$300.00</strong> </div>
-            </div>
-          </li>
-          <li> <a href="#"><img src="css/images/intel_i9_cpu.jpg" width="235" height="275" /></a>
-            <div class="product-info">
-              <h3>Intel i9 CPU</h3>
-              <div class="product-desc">
-                <h4>CPS</h4>
-                <p>Intel <br />
-                  i9-9900k CPU</p>
-                <strong class="price">$550.00</strong> </div>
-            </div>
-          </li>
-          <li class="last"> <a href="#"><img src="css/images/gskill_ddr4_32ram.jpg" width="235" height="275" /></a>
-            <div class="product-info">
-              <h3>G.Skill ddr4 32GB RAM</h3>
-              <div class="product-desc">
-                <h4>RAM</h4>
-                <p>G.Skill ddr4<br />
-                  32GB RAM</p>
-                <strong class="price">$125.00</strong> </div>
-            </div>
-          </li>
+        <ul id="searchRes">
         </ul>
         <div class="cl">&nbsp;</div>
       </div>
@@ -124,36 +82,6 @@
     <div class="cl">&nbsp;</div>
   </div>
   <!-- End Main -->
-  <!-- Side Full -->
-  <div class="side-full">
-    <!-- Text Cols -->
-    <div class="cols">
-      <div class="cl">&nbsp;</div>
-      <div class="col">
-        <h3 class="ico ico1">Donec imperdiet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-      </div>
-      <div class="col">
-        <h3 class="ico ico2">Donec imperdiet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-      </div>
-      <div class="col">
-        <h3 class="ico ico3">Donec imperdiet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-      </div>
-      <div class="col col-last">
-        <h3 class="ico ico4">Donec imperdiet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-      </div>
-      <div class="cl">&nbsp;</div>
-    </div>
-    <!-- End Text Cols -->
-  </div>
-  <!-- End Side Full -->
   <!-- Footer -->
   <div id="footer">
     <p class="left"> <a href="#">Home</a> <span>|</span> <a href="#">Support</a> <span>|</span> <a href="#">My Account</a> <span>|</span> <a href="#">The Store</a> <span>|</span> <a href="#">Contact</a> </p>

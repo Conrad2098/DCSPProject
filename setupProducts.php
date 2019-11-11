@@ -1,67 +1,54 @@
 <?php
-  require_once "login.php";
+  $conn = new mysqli("localhost", "root", "", "netid");
+  if ($conn->connect_error){
+    die($conn->connect_error);
+  }
 
-  $conn = new mysqli($hn, $un, $pw, $db);
-  if ($conn->connect_error)
-      die($conn->connect_error);
+  $query = "DROP TABLE IF EXISTS products;";
+
+  $result = $conn->query($query);
+  if (!$result){
+    die($conn->error);
+  }
 
   $query = "CREATE TABLE IF NOT EXISTS products (
-  name VARCHAR(128),
+  itmName VARCHAR(128),
   id INT,
+  itmCat VARCHAR(128),
+  itmDesc VARCHAR(128),
   price FLOAT,
-  image BLOB,
+  img VARCHAR(128),
   PRIMARY KEY (id)) ENGINE=INNODB;";
 
   $result = $conn->query($query);
-  if (!$result)
-      die($conn->error);
-
+  if (!$result){
+    die($conn->error);
+  }
 
   // Starts insertion
-  $query = "INSERT INTO products (name, id, price, image)
-   VALUES ('product','123','15.99', NULL)";
+  $query = "INSERT INTO products (itmName, id, itmCat, itmDesc, price, img)
+   VALUES ('asus 2060 graphics card','001', 'graphicscards', 'asus 2060 graphics card','150.00', './CSS/Images/asus_2060_gc.jpg')";
 
   $result = $conn->query($query);
-  if (!$result)
-     die($conn->error);
-/*
-  $query = "INSERT INTO classics (author, title, category, year, isbn)
-   VALUES ('Jane Austen','Pride and Prejudice','Fiction','1811','9780582506206')";
+  if (!$result){
+    die($conn->error);
+  }
+
+  $query = "INSERT INTO products (itmName, id, itmCat, itmDesc, price, img)
+  VALUES ('asus 2070 graphics card','002', 'graphicscards', 'asus 2070 graphics card','200.00', './CSS/Images/asus_2070_gc.jpg')";
 
   $result = $conn->query($query);
-  if (!$result)
-     die($conn->error);
+  if (!$result){
+    die($conn->error);
+  }
 
-  $query = "INSERT INTO classics (author, title, category, year, isbn)
-   VALUES ('Charles Darwin','The Origin of Species','Non-Fiction','1856','9780517123201')";
-
-  $result = $conn->query($query);
-  if (!$result)
-     die($conn->error);
-
-  $query = "INSERT INTO classics (author, title, category, year, isbn)
-   VALUES ('Charles Dickens','The Old Curiosity Shop','Fiction','1841','9780099533474')";
+  $query = "INSERT INTO products (itmName, id, itmCat, itmDesc, price, img)
+  VALUES ('asus 2080 graphics card','003', 'graphicscards', 'asus 2080 graphics card','300.00', './CSS/Images/asus_2080_gc.jpg')";
 
   $result = $conn->query($query);
-  if (!$result)
-     die($conn->error);
+  if (!$result){
+    die($conn->error);
+  }
 
-  $query = "INSERT INTO classics (author, title, category, year, isbn)
-   VALUES ('William Shakespeare','Romeo and Juliet','Play','1594','9780192814968')";
-
-  $result = $conn->query($query);
-  if (!$result)
-     die($conn->error);
-
-  $query = "INSERT INTO classics (author, title, category, year, isbn)
-   VALUES ('Charles Dickens','Little Dorrit','Fiction','1857','9780141439969')";
-
-   $result = $conn->query($query);
-   if (!$result)
-       die($conn->error);
-
-  else
-      echo "Table build successful.";
-  */
-
+  echo "Table Complete";
 ?>
