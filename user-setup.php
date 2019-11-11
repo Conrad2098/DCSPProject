@@ -5,7 +5,7 @@
       die($conn->connect_error);
   }
 
-  $query = "DROP TABLE IF EXISTS users;";
+  $query = "DROP TABLE users;";
   $conn->query($query);
 
   $query = "CREATE TABLE users (
