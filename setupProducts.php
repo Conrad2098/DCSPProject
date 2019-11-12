@@ -13,7 +13,7 @@
 
   $query = "CREATE TABLE IF NOT EXISTS products (
   itmName VARCHAR(128),
-  id INT,
+  id VARCHAR(5),
   itmCat VARCHAR(128),
   itmDesc VARCHAR(128),
   price FLOAT,

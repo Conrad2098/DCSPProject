@@ -19,7 +19,7 @@ function login(){
 
 function checkIfLoggedIn(){
 	try{
-		if(sessionStorage.length == 1){
+		if(sessionStorage.getItem("username") !== null){
 			window.location.replace("./cart.html")
 		}else{
 			window.location.replace("./login.html")
@@ -31,7 +31,7 @@ function checkIfLoggedIn(){
 
 function loginout(){
 	try{
-		if(sessionStorage.length == 1){
+		if(sessionStorage.getItem("username") !== null){
 			document.getElementById("account").innerHTML = "Logout";
 		}else{
 			document.getElementById("account").innerHTML = "Login";
@@ -43,7 +43,7 @@ function loginout(){
 
 function logout(){
 	try{
-		if(sessionStorage.length == 1){
+		if(sessionStorage.getItem("username") !== null){
 			sessionStorage.removeItem("username");
 			window.location.replace("./logout.html");
 		}else{

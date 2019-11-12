@@ -29,7 +29,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             <div class='product-desc'>
                 <h4>" . $row['itmCat'] . "</h4>
                 <p>" . $row['itmDesc'] . "</p>
-                <strong class='price'>$" . $row['price'] . ".00</strong> </div>
+                <strong class='price'>$" . $row['price'] . ".00</strong> <button class='to-cart' value=" . $row['id'] . " onclick='addToCart(this.value)'>Add To Cart</button> </div>
         </div>
     </li>
     ";
