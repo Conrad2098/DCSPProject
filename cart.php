@@ -24,7 +24,7 @@ for($i = 0; $i < strlen($string) / 3; $i++){
             <div class='product-desc'>
                 <h4>" . $row['itmCat'] . "</h4>
                 <p>" . $row['itmDesc'] . "</p>
-                <strong class='price'>$" . $row['price'] . ".00</strong> <button class='to-cart' value=" . $row['id'] . " onclick='removeItem(this.value)'>Remove From Cart</button> </div>
+                <strong class='price'>$" . $row['price'] . ".00</strong> <button class='from-cart' value=" . $row['id'] . " onclick='removeItem(this.value)'>Remove From Cart</button> </div>
         </div>
     </li>
     ";

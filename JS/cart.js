@@ -4,18 +4,21 @@ function addToCart(value){
     }
     if(sessionStorage.getItem("cart") == null){
         sessionStorage.setItem("cart", value);
-        alert(sessionStorage.getItem("cart"));
     }else{
         var oldMessage = sessionStorage.getItem("cart");
 
         sessionStorage.removeItem("cart");
         sessionStorage.setItem("cart", oldMessage + value);
-        alert(sessionStorage.getItem("cart"));
     }
 }
 
-function removeItem(){
-    alert("yeet");
+function removeItem(val){
+    var oldCart = sessionStorage.getItem("cart");
+    sessionStorage.removeItem("cart");
+
+    var newCart = oldCart.replace(val, '');
+    sessionStorage.setItem("cart", newCart);
+    window.location.reload();
 }
 
 function emptyCart(){

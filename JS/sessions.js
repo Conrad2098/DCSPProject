@@ -45,6 +45,7 @@ function logout(){
 	try{
 		if(sessionStorage.getItem("username") !== null){
 			sessionStorage.removeItem("username");
+			sessionStorage.removeItem("cart");
 			window.location.replace("./logout.html");
 		}else{
 			window.location.replace("./login.html");

@@ -1,5 +1,5 @@
 function displayCart(){
-    if(sessionStorage.getItem("cart") == null){
+    if(sessionStorage.getItem("cart") == null || sessionStorage.getItem("cart") == ""){
         document.getElementById("cartContent").innerHTML = "<h1>No items in cart</h1><br><br>"
     }else{
         var cartStuff = sessionStorage.getItem("cart");
