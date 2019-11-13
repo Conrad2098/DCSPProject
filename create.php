@@ -7,7 +7,9 @@ if ($conn->connect_error){
     die($conn->connect_error);
 }
 
-$query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES(00002, '" . $user . "', '" . $pass . "', false);";
+$num = rand(10000, 99999);
+
+$query = "INSERT INTO users(userID, username, pass, isAdmin) VALUES($num, '" . $user . "', '" . $pass . "', false);";
 $conn->query($query);
 
 $query = "SELECT * FROM users WHERE username = '" . $user . "' AND pass = '" . $pass . "' LIMIT 1;";

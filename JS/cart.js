@@ -1,6 +1,7 @@
 function addToCart(value){
     if(sessionStorage.getItem("username") == null){
         window.location.replace("./login.html");
+        return;
     }
     if(sessionStorage.getItem("cart") == null){
         sessionStorage.setItem("cart", value);
@@ -9,7 +10,10 @@ function addToCart(value){
 
         sessionStorage.removeItem("cart");
         sessionStorage.setItem("cart", oldMessage + value);
+
     }
+    Notification.requestPermission();
+    var notification = new Notification('Item Added');
 }
 
 function removeItem(val){

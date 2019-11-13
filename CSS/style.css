@@ -43,7 +43,7 @@ h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(imag
 #navigation ul li a.active,
 #navigation ul li a:hover{ background:#fff; color:#8b0000; }
 
-#cart { float:right; width:160px; top:0; right:0; height:51px; background:#8b0000; color:#fff; padding:13px 10px 0 10px; white-space:nowrap; line-height:20px;}
+#cart { float:right; width:160px; top:0; right:0; height:51px; background:#8b0000; color:#fff; padding:13px 13px 0 10px; white-space:nowrap; line-height:35px;}
 a.cart-link { color:#fff; background:url(images/cart-link.gif) no-repeat 0 0; padding:0 0 0 32px; text-decoration: none;}
 a.cart-link:hover { text-decoration: underline;}
 
@@ -54,9 +54,9 @@ a.cart-link:hover { text-decoration: underline;}
 
 .top { padding:4px; height:40; width:864px; font-size:16px}
 .topSearch { padding:6px; height:50px; width:960px}
-.top-submit { width:40px; height:29px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
-.to-cart { width:75px; height:29px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0; }
-.from-cart { width:105px; height:29px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0; }
+.top-submit { padding-right:5px; padding-left:5px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
+.to-cart { padding-right:5px; padding-left:5px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0; }
+.from-cart { padding-right:5px; padding-left:5px; background:#8b0000; border:0; color:#fff; display:inline; line-height:26px; cursor:pointer; margin:12px 0 10px 0; }
 
 .box { padding:1px; border:solid 1px #dedede; margin-bottom:10px;}
 .box h2{ background:#7f7f7f; color:#fff; font-weight: normal; padding:0 5px; position:relative; height:27px; line-height:27px; }
@@ -75,9 +75,9 @@ a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 .search select.field { width:212px; }
 .search select.small-field { width:50px; }
 
-.search-submit {display:inline; background:#8b0000; border:0; padding-right:4px; padding-left:4px; color:#fff; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
+.search-submit {display:inline; background:#8b0000; border:0; padding-right:10px; padding-left:10px; color:#fff; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0;}
 
-.categories { min-height:383px; }
+.categories { min-height:145px; }
 .categories ul { list-style-type: none; font-size:13px;}
 .categories ul li{ border-bottom:dashed 1px #ccc; padding:5px 0;}
 .categories ul li.last{ border-bottom:0; padding-bottom:0;}

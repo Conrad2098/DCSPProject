@@ -12,6 +12,7 @@
   userID INT,
   username VARCHAR(32) NOT NULL,
   pass VARCHAR(32) NOT NULL,
+  cart VARCHAR(128),
   isAdmin BOOL,
   PRIMARY KEY (userID)) ENGINE=INNODB;";
 

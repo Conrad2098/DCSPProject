@@ -41,6 +41,7 @@ function loginout(){
 	}
 }
 
+
 function logout(){
 	try{
 		if(sessionStorage.getItem("username") !== null){
