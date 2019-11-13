@@ -29,7 +29,7 @@ function adminBox(){
 		<div class="box-content">
 		<ul>
 		<li><a onclick="toAdmin('newAdmin')">Create New Admin</a></li>
-		<li><a onclick="toAdmin('removeAdmin')">Remove Admin</a></li>
+		<li><a onclick="toAdmin('removeAdmin')">Remove Account</a></li>
 		<li><a onclick="toAdmin('addItem')">Add Item to Store</a></li>
 		<li class="last"><a onclick="toAdmin('removeAdmin')">Remove Item from Store</a></li>
 		</ul>
