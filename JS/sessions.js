@@ -7,14 +7,41 @@ function login(){
         if(this.readyState == 4 && this.status == 200){
             if(this.responseText == "0"){
 				alert("Invalid Login Credientials");
+			}else if(this.responseText == "admin"){
+				sessionStorage.setItem("username", name);
+				sessionStorage.setItem("admin", "yes")
+				window.location.replace("home.html");
 			}else{
 				sessionStorage.setItem("username", name);
+				sessionStorage.setItem("admin", "no")
 				window.location.replace("home.html");
 			}
         }
     }
     req.open("GET", "login.php?u=" + name + "&p=" + pass, true);
     req.send();
+}
+
+function adminBox(){
+	if(sessionStorage.getItem("admin") == "yes"){
+		document.getElementById("adminBox").innerHTML = `<div class="box categories">
+		<h2>Admin Functions <span></span></h2>
+		<div class="box-content">
+		<ul>
+		<li><a onclick="toAdmin('newAdmin')">Create New Admin</a></li>
+		<li><a onclick="toAdmin('removeAdmin')">Remove Admin</a></li>
+		<li><a onclick="toAdmin('addItem')">Add Item to Store</a></li>
+		<li class="last"><a onclick="toAdmin('removeAdmin')">Remove Item from Store</a></li>
+		</ul>
+		</div>
+		</div>`;
+	}else{
+		document.getElementById("adminBox").innerHTML = "";
+	}
+}
+
+function toAdmin(type){
+	window.location.replace("./admin.html?q=" + type);
 }
 
 function checkIfLoggedIn(){
@@ -47,6 +74,7 @@ function logout(){
 		if(sessionStorage.getItem("username") !== null){
 			sessionStorage.removeItem("username");
 			sessionStorage.removeItem("cart");
+			sessionStorage.removeItem("admin");
 			window.location.replace("./logout.html");
 		}else{
 			window.location.replace("./login.html");
@@ -74,4 +102,5 @@ function search(){
 
 window.onload = function(){
 	this.loginout();
+	this.adminBox();
 }

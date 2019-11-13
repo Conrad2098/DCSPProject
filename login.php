@@ -13,6 +13,12 @@ $result = $conn->query($query);
 if(mysqli_num_rows($result)==0){
     echo "0";
 }else{
-    echo "found";
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    if($row["isAdmin"] == true){
+        echo "admin";
+    }else{
+        echo "found";
+    }
 }
 ?>

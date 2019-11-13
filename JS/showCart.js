@@ -15,6 +15,19 @@ function displayCart(){
     }
 }
 
+function price(){
+    var cartStuff = sessionStorage.getItem("cart");
+
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("price").innerHTML = "Total Price: $" + this.responseText;
+            }
+        }
+        req.open("GET", "price.php?q=" + cartStuff, true);
+        req.send();
+}
+
 function loginout(){
 	try{
 		if(sessionStorage.getItem("username") !== null){
@@ -27,7 +40,12 @@ function loginout(){
 	}
 }
 
+function purchase(){
+    window.location.replace("./purchase.html")
+}
+
 window.onload = function(){
     this.loginout();
+    this.price();
     this.displayCart();
 };

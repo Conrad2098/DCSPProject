@@ -26,6 +26,7 @@ function removeItem(val){
 }
 
 function emptyCart(){
+    alert(sessionStorage.getItem("cart"));
     sessionStorage.removeItem("cart");
     alert("Cart Emptied");
 }
