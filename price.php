@@ -5,10 +5,12 @@ if ($conn->connect_error){
     die($conn->connect_error);
 }
 
-$string = $_REQUEST["q"];
+$string = $_REQUEST["p"];
+$total = 0.0;
 
-for($i = 0; $i < strlen($string) / 3; $i++){
-    $singleItem = substr($string, $i*3, 3);
+
+for($i = 0; $i < strlen($string) / 5; $i++){
+    $singleItem = substr($string, $i*5, 5);
 
     $query = "SELECT * FROM products WHERE id = " . $singleItem . ";";
     $result = $conn->query($query);
@@ -16,13 +18,12 @@ for($i = 0; $i < strlen($string) / 3; $i++){
         die($conn->error);
     }
 
-    $total = 0.0;
-
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $total = $total + (int)$row["price"];
     }
 
-
 }
+echo $total;
+
 
 ?>

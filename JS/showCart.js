@@ -16,16 +16,23 @@ function displayCart(){
 }
 
 function price(){
-    var cartStuff = sessionStorage.getItem("cart");
+    if(sessionStorage.getItem("cart") == null || sessionStorage.getItem("cart") == ""){
+        document.getElementById("price").innerHTML = "Total Price: $0.00"
+        document.getElementById("purchaseButton").innerHTML = '';
+    }else{
+        var cartStuff = sessionStorage.getItem("cart");
 
         var req = new XMLHttpRequest();
         req.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-                document.getElementById("price").innerHTML = "Total Price: $" + this.responseText;
+                alert(this.responseText);
+                document.getElementById("price").innerHTML = "Total Price: $" + this.responseText + ".00";
+                document.getElementById("purchaseButton").innerHTML = '<button class="top-submit" onclick="purchase()">Purchase</button>';
             }
         }
-        req.open("GET", "price.php?q=" + cartStuff, true);
+        req.open("GET", "price.php?p=" + cartStuff, true);
         req.send();
+    }
 }
 
 function loginout(){
@@ -46,6 +53,6 @@ function purchase(){
 
 window.onload = function(){
     this.loginout();
-    this.price();
     this.displayCart();
+    this.price();
 };
