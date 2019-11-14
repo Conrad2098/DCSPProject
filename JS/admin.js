@@ -125,7 +125,7 @@ function preview(){
 }
 
 function removeItem(){
-    var num = document.getElementById("").value;
+    var num = document.getElementById("itemID").value;
 
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){

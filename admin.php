@@ -73,7 +73,24 @@ if($type == "createAdmin"){
     }
 
 }else if($type == "removeItem"){
+    $num = $_REQUEST["n"];
 
+    $conn = new mysqli('localhost', 'root', '', 'netid');
+    if ($conn->connect_error){
+        die($conn->connect_error);
+    }
+
+    $query = "DELETE FROM products WHERE id = '" . $num . "';";
+    $conn->query($query);
+
+    $query = "SELECT * FROM products WHERE id = '" . $num . "' LIMIT 1;";
+    $results = $conn->query($query);
+
+    if(mysqli_num_rows($results) == 0){
+        echo "YeeHaw";
+    }else{
+        echo "";
+    }
 }
 
 ?>
