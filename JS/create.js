@@ -6,7 +6,6 @@ function createNew(){
     req.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             if(this.responseText == ""){
-                alert(this.responseText);
                 alert("Already Exists. Please try again.")
             }else{
                 alert("Account Created. Click OK to return to the login page.");
