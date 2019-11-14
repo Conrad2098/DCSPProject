@@ -47,6 +47,30 @@ if($type == "createAdmin"){
     }
 
 }else if($type == "addItem"){
+    $name = $_REQUEST["n"];
+    $price = $_REQUEST["p"];
+    $cat = $_REQUEST["c"];
+    $desc = $_REQUEST["d"];
+    $img = $_REQUEST["i"];
+
+    $conn = new mysqli('localhost', 'root', '', 'netid');
+    if ($conn->connect_error){
+        die($conn->connect_error);
+    }
+
+    $num = rand(10000, 99999);
+
+    $query = "INSERT INTO products(itmName, id, itmCat, itmDesc, price, img) VALUES('" . $name . "', '" . $num . "', '" . $cat . "', '" . $desc . "', '" . $price . "', '" . $img . "');";
+    $conn->query($query);
+
+    $query = "SELECT * FROM products WHERE id = '" . $num . "' LIMIT 1;";
+    $results = $conn->query($query);
+
+    if(mysqli_num_rows($results) == 0){
+        echo "";
+    }else{
+        echo "YeeHaw";
+    }
 
 }else if($type == "removeItem"){
 

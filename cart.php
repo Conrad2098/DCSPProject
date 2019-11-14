@@ -7,8 +7,8 @@ if ($conn->connect_error){
 
 $string = $_REQUEST["q"];
 
-for($i = 0; $i < strlen($string) / 3; $i++){
-    $singleItem = substr($string, $i*3, 3);
+for($i = 0; $i < strlen($string) / 5; $i++){
+    $singleItem = substr($string, $i*5, 5);
 
     $query = "SELECT * FROM products WHERE id = " . $singleItem . ";";
     $result = $conn->query($query);
