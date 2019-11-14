@@ -13,14 +13,14 @@
             die($conn->connect_error);
         }
 
-        $query = 'SELECT * FROM users;';
+        $query = 'SELECT * FROM products;';
         $result = $conn->query($query);
 
         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            echo "<h1>" . $row["username"] . "</h1>";
-            echo "<p>" . $row["pass"] . "</p>";
-            echo "<p>" . $row["userID"] . "</p>";
-            echo "<p>" . $row["isAdmin"] . "</p>";
+            echo "<h1>" . $row["itmName"] . "</h1>";
+            echo "<p>" . $row["id"] . "</p>";
+            echo "<p>" . $row["price"] . "</p>";
+            echo "<p>" . $row["itmCat"] . "</p>";
         }
         
         ?>
