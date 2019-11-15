@@ -25,7 +25,6 @@ function price(){
         var req = new XMLHttpRequest();
         req.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-                alert(this.responseText);
                 document.getElementById("price").innerHTML = "Total Price: $" + this.responseText + ".00";
                 document.getElementById("purchaseButton").innerHTML = '<button class="top-submit" onclick="purchase()">Purchase</button>';
             }

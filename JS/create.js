@@ -2,6 +2,11 @@ function createNew(){
     var name = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
+    if(name == "" || pass == ""){
+        alert("Must put in both a username and password for new account.");
+        return;
+    }
+
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){

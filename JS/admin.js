@@ -1,6 +1,6 @@
 function adminPage(){
     var url = String (document.location);
-    var type = url.substring(42, url.length);
+    var type = url.substring(43, url.length);
 
     if(type == "newAdmin"){
         document.getElementById("adminFunc").innerHTML = `<br><br><br>
@@ -40,12 +40,19 @@ function adminPage(){
         <p>Please input the ID of the item you wish to delete:</p><br>
         Item ID: <input class="field" type="text" id="itemID" value=""><br><br>
         <button onclick="removeItem()" class="search-submit" type="button">Remove Item</button>`;
+    }else if(type == "showInv"){
+        showInv();
     }
 }
 
 function createAdmin(){
     var newUser = document.getElementById("username").value;
     var newPass = document.getElementById("password").value;
+
+    if(newUser == "" || newPass == ""){
+        alert("Must put in both a username and password for new account.");
+        return;
+    }
 
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){
@@ -139,6 +146,19 @@ function removeItem(){
     }
     req.open("GET", "admin.php?n=" + num + "&t=removeItem", true);
     req.send();
+}
+
+function showInv(){
+
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            document.getElementById("adminFunc").innerHTML = "<div class='products'><ul>" + this.responseText + "</ul></div>";
+        }
+    }
+    req.open("GET", "admin.php?t=showInv", true);
+    req.send();
+
 }
 
 window.onload = function(){
