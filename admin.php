@@ -100,9 +100,6 @@ if($type == "createAdmin"){
 
     $query = "SELECT * FROM products;";
     $result = $conn->query($query);
-    if(!$result){
-        die($conn->error);
-    }
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo "
