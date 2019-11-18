@@ -1,6 +1,6 @@
 function adminPage(){
     var url = String (document.location);
-    var type = url.substring(43, url.length);
+    var type = url.substring(42, url.length);
 
     if(type == "newAdmin"){
         document.getElementById("adminFunc").innerHTML = `<br><br><br>
